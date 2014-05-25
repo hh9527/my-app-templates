@@ -1,0 +1,5 @@
+extends layout
+
+block content
+	for user in users
+		li(id=user.id data-id=user.id)= user.name

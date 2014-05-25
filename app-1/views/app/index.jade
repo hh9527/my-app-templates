@@ -1,0 +1,37 @@
+extends layout
+
+block x-links
+
+block x-scripts
+	// script(src="/js/my-app.coffee" type="text/coffeescript")
+	script(src="/js/my-app.js")
+
+block sidebar
+	h1.app-name my-app
+	div.scrollable.sidebar-scrollable
+		div.scrollable-content
+			div.list-group(toggle="off" bubble target="sidebar")
+				a.list-group-item(href="#/") Home
+					i.fa.fa-chevron-right.pull-right
+				a.list-group-item(href="#/contacts") Contacts
+					i.fa.fa-chevron-right.pull-right
+				a.list-group-item(href="#/discovery") Discovery
+					i.fa.fa-chevron-right.pull-right
+				a.list-group-item(href="#/settings") Settings
+					i.fa.fa-chevron-right.pull-right
+
+block sidebar-right
+	div.scrollable
+		div.scrollable-content
+			div.list-group(toggle="off" bubble target="sidebar-right")
+				a.list-group-item.media(href="#" ng-repeat="user in users")
+					div.pull-left
+						i.fa.fa-user.chat-user-avatar
+					div.media-body
+						h5.media-heading {{user.name}}
+						small(ng-switch on="user.online")
+							span(ng-switch-when="true")
+								span.label.label-success ONLINE
+							span(ng-switch-default)
+								span.label.label-default
+									i OFFLINE

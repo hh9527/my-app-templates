@@ -1,0 +1,19 @@
+{
+  "name": "webworks",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "mobile-angular-ui": "*",
+    "angular": "1.2.16",
+    "angular-route": "1.2.16",
+    "angular-touch": "1.2.16"
+  },
+  "ignore": [
+    "**/.*",
+    "apps",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
